@@ -1,0 +1,32 @@
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style-type: none;
+    cursor:pointer;
+}
+
+li {
+    border: 1px solid black;
+    padding: 10px;
+    min-height: 35vh;
+    min-width: 20vw;
+    margin: 2vw;
+    color: white;
+    background-color: rgba(12, 55, 68, 0.276);
+    font-size: 1.7vh;
+    text-align: center;
+}
+
+
+a {
+    text-decoration: none;
+   
+}
+
+.quote {
+    background-color: rgba(255, 251, 251, 0.342);
+    padding: .5vh;
+    font-weight: bold;   
+    color: rgb(5, 43, 124);
+
+}

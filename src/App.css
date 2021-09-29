@@ -1,0 +1,8 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://www.syfy.com/sites/syfy/files/2017/06/screen_shot_2017-06-24_at_11.16.16_pm.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 0;
+}
