@@ -1,10 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 import {
   BrowserRouter as Router, 
   Route, 
   Switch,
-  NavLink
 } from 'react-router-dom';
 import ListPage from './ListPage.js';
 import DetailPage from './DetailPage.js';
