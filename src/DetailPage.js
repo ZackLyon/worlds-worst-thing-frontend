@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import request from 'superagent'
-
+import { fetchQuote } from './request-utils.js'
 import './DetailPage.css'
 
 export default class DetailPage extends Component {
@@ -9,17 +8,12 @@ export default class DetailPage extends Component {
         isLoading: false
     }
 
-    fetchQuote = async () => {
-        this.setState({ isLoading: true })
-
-        const response =  await request.get(`https://thing-quotes-database.herokuapp.com/thingQuotes/${this.props.match.params.id}`)
-
-    
-        this.setState({ quote: response.body, isLoading: false })
-    }
-
     componentDidMount = async() => {
-        await this.fetchQuote();
+        this.setState({ isLoading: true })
+        const currentId = this.props.match.params.id;
+        const response = await fetchQuote(currentId);
+
+        this.setState({ quote: response, isLoading: false })
         console.log(this.state.quote)
     }
 

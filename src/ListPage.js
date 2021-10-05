@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import request from 'superagent'
+
 import QuoteList from './QuoteList.js'
+import { fetchQuotes } from './request-utils.js'
 
 export default class ListPage extends Component {
 
@@ -10,17 +11,14 @@ export default class ListPage extends Component {
     }
 
     componentDidMount = async() => {
-        await this.fetchQuotes()
+        this.setState({ isLoading: true });
+        const response = await fetchQuotes();
+        console.log(response);
+        this.setState({ quoteList: response, isLoading: false })
         console.log(this.state.quoteList);
     }
 
-    fetchQuotes = async () => {
-        this.setState({ isLoading: true })
-
-        const response =  await request.get(`https://thing-quotes-database.herokuapp.com/thingQuotes/`)
     
-        this.setState({ quoteList: response.body, isLoading: false })
-    }
 
 
     render() {
