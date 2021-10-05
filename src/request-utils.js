@@ -1,5 +1,5 @@
 import request from 'superagent'
-export { fetchQuotes, fetchQuote, postQuote };
+export { fetchQuotes, fetchQuote, fetchCategories, postQuote };
 
 async function fetchQuotes() {
     
@@ -15,6 +15,16 @@ async function fetchQuote(id) {
     return response.body;
 }
 
-async function postQuote(obj) {
-    await request.post(obj);
+async function fetchCategories() {
+    
+    const response = await request.get(`https://thing-quotes-database.herokuapp.com/categories/`)
+
+    return response.body;
 }
+
+async function postQuote(obj) {
+    const response = await request.post(`https://thing-quotes-database.herokuapp.com/thingQuotes`).send(obj);
+
+    return response.body;
+}
+
