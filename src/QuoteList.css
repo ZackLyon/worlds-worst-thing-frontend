@@ -39,7 +39,6 @@ li > * {
 
 a {
     text-decoration: none;
-   
 }
 
 .quote {
@@ -48,5 +47,4 @@ a {
     font-size: 1.5vw;
     font-weight: bold;   
     color: rgb(41, 63, 130);
-
 }

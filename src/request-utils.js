@@ -30,8 +30,12 @@ async function postQuote(dataToSend) {
 
 async function updateQuote(dataToSend, id) {
     const response = await request.put(`https://thing-quotes-database.herokuapp.com/thingQuotes/${id}`).send(dataToSend);
+
+    return response;
 }
 
 async function deleteQuote(id) {
     const response = await request.delete(`https://thing-quotes-database.herokuapp.com/thingQuotes/${id}`);
+
+    return response;
 }
