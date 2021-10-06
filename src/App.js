@@ -15,8 +15,8 @@ function App() {
     <div>
       <Router>
         <header>
-          <NavLink exact to="/">Home</NavLink>
-          <NavLink exact to="/create">Add Quote</NavLink>
+          <NavLink activeClassName="active-link" exact to="/">Home</NavLink>
+          <NavLink activeClassName="active-link" exact to="/create">Add Quote</NavLink>
         </header>
         <Switch>
             <Route 

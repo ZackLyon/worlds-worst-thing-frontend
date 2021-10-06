@@ -22,29 +22,34 @@ export default class UpdatePage extends Component {
         //fetch categories and update state with their values
         const categoryArr = await fetchCategories();
         await this.setState({categories: categoryArr});
+
+        //set the initial value of role id to the correct value, so that it does not rely on select onChange
         const roleId = categoryArr.find(item => item.role === quoteData.role).id;
-        console.log("role id ", roleId);
+        await this.setState({role_id: roleId});
     }
 
     handleUpdate = async(e) => {
         e.preventDefault();
-        console.log("state on update ", this.state)
+
         const currentId = this.props.match.params.id;
         const submission = this.state;
-        const updateResponse = updateQuote(submission, currentId);
-        console.log("update response ", updateResponse);
+        await updateQuote(submission, currentId);
+
+        this.props.history.push('/');
     }
 
     handleDelete = async(e) => {
         e.preventDefault();
+
         const currentId = this.props.match.params.id;
         await deleteQuote(currentId);
+
         this.props.history.push('/');
     }
 
     render() {
         return (
-            <div>
+            <div className="page-container">
                 <form id="update-form">
                     <label>
                         Name:
@@ -77,11 +82,6 @@ export default class UpdatePage extends Component {
                             value={this.state.quote}
                             ></textarea>
                         </div>
-                        {/* <input className="quote-box" type="text" 
-                        onChange={(e) => this.setState({quote: e.target.value})} 
-                        value={this.state.quote}
-                        > */}
-                        {/* </input> */}
                     </label>
                     <label>
                         Known to be a Thing? :
@@ -96,9 +96,9 @@ export default class UpdatePage extends Component {
                             >False</option>
                         </select>
                     </label>
-                    <div>
-                        <button onClick={this.handleUpdate}>Update</button>
-                        <button onClick={this.handleDelete}>Delete</button>
+                    <div className="button-container">
+                        <button className="update-button" onClick={this.handleUpdate}>Update</button>
+                        <button className="delete-button"onClick={this.handleDelete}>Delete</button>
                     </div>
                 </form>
             </div>

@@ -6,17 +6,36 @@ ul {
 }
 
 li {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
     border: 1px solid black;
     padding: 10px;
-    min-height: 35vh;
+    height: 50vh;
     min-width: 20vw;
-    margin: 2vw;
+    margin: .5vw;
     color: white;
     background-color: rgba(12, 55, 68, 0.276);
     font-size: 1.7vh;
     text-align: center;
 }
 
+h1 {
+    letter-spacing: .2vw;
+    font-size: 3vw;
+}
+
+h4 {
+    font-size: 2vw;
+}
+
+h6 {
+    font-size: 1vw;
+}
+
+li > * {
+    margin: .3vh;
+}
 
 a {
     text-decoration: none;
@@ -24,9 +43,10 @@ a {
 }
 
 .quote {
-    background-color: rgba(255, 251, 251, 0.342);
+    background-color: rgba(255, 251, 251, 0.584);
     padding: .5vh;
+    font-size: 1.5vw;
     font-weight: bold;   
-    color: rgb(5, 43, 124);
+    color: rgb(41, 63, 130);
 
 }

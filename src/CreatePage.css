@@ -1,8 +1,65 @@
 form {
     display: flex;
     flex-direction: column;
+    padding: 5vh;
+    height: auto;
+    width: 50vw;
+    background-color: rgba(0, 44, 91, 0.728);
+    border: 1px black solid;
 }
 
 form > * {
     margin: 5px;
+}
+
+label {
+    font-size: 5vh;
+    color: white;
+}
+
+input, select {
+    font-size: 5vh;
+    margin-left: 1vh;
+    margin-top: .3vh;
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+input, textarea {
+    text-indent: .5vw;
+}
+
+select {
+    text-align: center;
+}
+
+button {
+    margin-top: 2vh;
+    font-size: 5vh;
+    padding: .8vh;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.quote-box {
+    width: 50vw;
+    height: 10vh;
+    font-size: 2.5vh;
 }

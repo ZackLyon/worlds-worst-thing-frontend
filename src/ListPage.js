@@ -18,9 +18,6 @@ export default class ListPage extends Component {
         console.log(this.state.quoteList);
     }
 
-    
-
-
     render() {
         return (
             <div>
