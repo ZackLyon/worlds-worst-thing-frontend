@@ -12,10 +12,9 @@ export default class ListPage extends Component {
 
     componentDidMount = async() => {
         this.setState({ isLoading: true });
+
         const response = await fetchQuotes();
-        console.log(response);
         this.setState({ quoteList: response, isLoading: false })
-        console.log(this.state.quoteList);
     }
 
     render() {

@@ -13,10 +13,11 @@ export default class CreatePage extends Component {
 
     handleSubmit = async(e) => {
         e.preventDefault();
-        const submission = this.state;
-        const response = postQuote(submission);
-        console.log(response);
 
+        const submission = this.state;
+        await postQuote(submission);
+
+        this.props.history.push('/');
     }
 
     componentDidMount = async() => {
