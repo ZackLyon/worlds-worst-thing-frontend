@@ -7,8 +7,8 @@ import {
   NavLink
 } from 'react-router-dom';
 import ListPage from './ListPage.js';
-import DetailPage from './DetailPage.js';
 import CreatePage from './CreatePage.js';
+import UpdatePage from './UpdatePage.js';
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
             <Route 
                 path="/thingQuotes/:id" 
                 exact
-                render={(routerProps) => <DetailPage {...routerProps} />} 
+                render={(routerProps) => <UpdatePage {...routerProps} />} 
             />
             <Route 
                 path="/create" 

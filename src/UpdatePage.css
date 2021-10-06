@@ -1,0 +1,9 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.quote-box {
+    width: 50vw;
+    height: 10vh;
+}
